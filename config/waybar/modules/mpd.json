@@ -1,0 +1,17 @@
+{
+
+  "mpd": {
+    "on-click": "mpc toggle",
+    "format": "{stateIcon}  {artist} - {title}  ",
+    "format-disconnected": "Disconnected  ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 2,
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  }
+}

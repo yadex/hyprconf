@@ -1,0 +1,68 @@
+env:
+  TERM: alacritty
+
+padding:
+  x: 0
+  y: 0
+
+class:
+  instance: Alacritty
+  general: Alacritty
+
+
+
+
+font:
+  normal:
+    family: Rec Mono Casual
+    style: normal
+  size: 23
+  offset:
+    x: -1
+    y: 0
+
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+
+cursor:
+  style:
+    shape: Block
+
+
+key_bindings:
+  - { key: L, mods: Control, action: ResetFontSize }
+  - { key: K, mods: Control, action: IncreaseFontSize }
+  - { key: J, mods: Control, action: DecreaseFontSize }
+  - { key: V, mods: Control|Alt, action: Paste }
+  - { key: Escape,  mods: Alt, mode: Vi|~Search, action: ScrollToBottom}         
+  - { key: Escape,  mods: Alt, mode: ~Search,    action: ToggleViMode            }         
+
+
+
+ # The definition of color schemes.
+
+colors:
+  primary:
+      background: '#282828'
+      foreground: '#d4be98'
+  normal:
+      black:   '#3c3836'
+      red:     '#ea6962'
+      green:   '#a9b665'
+      yellow:  '#d8a657'
+      blue:    '#7daea3'
+      magenta: '#d3869b'
+      cyan:    '#89b482'
+      white:   '#d4be98'
+  bright:
+      black:   '#7c6f64'
+      red:     '#ea6962'
+      green:   '#a9b665'
+      yellow:  '#d8a657'
+      blue:    '#7daea3'
+      magenta: '#d3869b'
+      cyan:    '#89b482'
+      white:   '#d4be98'

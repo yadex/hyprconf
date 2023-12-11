@@ -1,0 +1,37 @@
+[{
+  "layer": "top",
+   "position": "top",
+   "height": 36, 
+   "spacing": 4,
+
+   "include" : [
+      "$HOME/.config/waybar/modules/workspace.json",
+      "$HOME/.config/waybar/modules/clock.json", 
+      "$HOME/.config/waybar/modules/battery.json", 
+      "$HOME/.config/waybar/modules/pulseaudio.json"
+      ],
+
+   "modules-left": ["hyprland/workspaces"],
+   "modules-center": ["clock"],
+   "modules-right": [ "battery", "pulseaudio"]
+},
+
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 36,
+  "spacing": 4,
+
+  "include" : [
+     "$HOME/.config/waybar/modules/cpu.json", 
+     "$HOME/.config/waybar/modules/memory.json", 
+     "$HOME/.config/waybar/modules/temperature.json", 
+     "$HOME/.config/waybar/modules/mpd.json",
+     "$HOME/.config/waybar/modules/tray.json"
+    ],
+
+  "modules-left": ["cpu", "memory", "temperature"],
+  "modules-center": ["mpd"],
+  "modules-right": ["tray"]
+}]
+
