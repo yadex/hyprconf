@@ -12,8 +12,12 @@ cmp.setup({
 		end,
 	},
 	window = {
-		-- completion = cmp.config.window.bordered(),
-		-- documentation = cmp.config.window.bordered(),
+	--completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+		completion = {
+			border = "rounded",
+			scrollbar = false,
+		}
 	},
 	mapping = cmp.mapping.preset.insert({
 		['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -50,7 +54,7 @@ cmp.setup.filetype('gitcommit', {
 --	}
 --})
 --
----- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+------ Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 --cmp.setup.cmdline(':', {
 --	mapping = cmp.mapping.preset.cmdline(),
 --	sources = cmp.config.sources({

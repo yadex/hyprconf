@@ -2,10 +2,10 @@
 require("lazynvim")
 require("plugins/nvimcmp-setup")
 require("plugins/lsp-setup")
-require("plugins/fzf-setup")
 require("plugins/lualine-setup")
 require("plugins/noice-setup")
 require("plugins/color-pick")
+require("plugins/gruvbox-setup")
 
 
 -- basic setup
@@ -23,21 +23,24 @@ set.shortmess="atI"
 -- set.cmdheight=0
 
 
--- theme
-set.background = "dark"
-vim.cmd([[colorscheme gruvbox-material]])
--- vim.cmd([[colorscheme gruvbox]])
-set.termguicolors = true
-vim.cmd([[au VimEnter * highlight MatchParen ctermfg=green guibg=green]]) 
 
 
 
 -- keymap setup
-vim.keymap.set("n", "<c-f>",
-"<cmd>lua require('fzf-lua').lines()<CR>", { silent = true })
-vim.keymap.set("n", "<c-b>",
-"<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true })
-vim.keymap.set({ "n", "v", "i" }, "<C-x><C-f>",
-  function() require("fzf-lua").complete_path() end,
-  { silent = true, desc = "Fuzzy complete path" })
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<c-x><c-f>', builtin.find_files, {})
+vim.keymap.set('n', '<c-x><c-g>', builtin.live_grep, {})
+vim.keymap.set('n', '<c-x><c-b>', builtin.buffers, {})
+vim.keymap.set('n', '<c-x><c-h>', builtin.help_tags, {})
+ --neotree
+ vim.keymap.set("n", "<c-y>", "<cmd>Neotree float toggle<CR>")
+ require("neo-tree").setup({
+    popup_border_style = "rounded"
+})
+
+
+--neovide
+if vim.g.neovide then
+	 vim.o.guifont = "monospace:h21"
+end
 

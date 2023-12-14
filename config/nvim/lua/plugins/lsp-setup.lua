@@ -6,7 +6,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 -- python
-lsp_config['pyright'].setup {
+lsp_config['pylsp'].setup {
 	capabilities = capabilities
 }
 
